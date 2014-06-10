@@ -1,0 +1,12 @@
+*.log
+node_modules
+public/uploads/*
+public/stylesheets/base.css
+test/fixtures/public
+test/fixtures/db/*
+test/fixtures/tmp/*
+dev/images
+dev/logo
+db/auths
+db/data
+tmp/*

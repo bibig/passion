@@ -1,0 +1,10 @@
+{% if site.background %}
+  body { 
+    background: url('/uploads/site/{{site.background}}');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+{% endif %}
+{% if site.css %}{{ site.css }}{% endif %}

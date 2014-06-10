@@ -1,0 +1,19 @@
+{% if cats %}
+<div id="nav">
+  <div class="cats">
+  {% if currentCat.id %}
+    <a href="/">首页</a>
+  {% else %}
+    <strong>首页</strong>
+  {% endif %}
+
+  {% for cat in cats %}
+    {% if currentCat.id == cat.id %}
+      <strong>{{cat.name}}</strong>
+    {% else %}
+      <a href="/cat/{{cat.id}}" title="{{cat.name}}">{{cat.name}}</a>
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>
+{% endif %}

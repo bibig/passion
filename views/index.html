@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% set pageTitle = site.name %}
+
+{% block style %}
+  {% include "./shared/main_style.html" %}
+{% endblock %}
+
+{% block content %}
+  {% include "./shared/macros.html" %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="posts">
+      {{ post_list(posts) }}
+      {{ post_page(newer, older) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

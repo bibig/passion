@@ -1,0 +1,40 @@
+{% extends './layout.html' %}
+
+{% block content %}
+    <div class="container">
+			{{ breadcrumbs|safe }}
+      {{ form|safe }}
+    </div>
+{% endblock %}
+
+{% block script %}
+  {% if isProduction %}
+    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+  {% else %}
+    <script src="/javascripts/tinymce/jquery.tinymce.min.js"></script>
+    <script src="/javascripts/tinymce/tinymce.min.js"></script>
+  {% endif %}
+	<script>
+		$(function () {
+			tinymce.init({
+				selector: '#input_content, #input_memo',
+				language : 'zh_CN',
+        language_url : '/javascripts/tinymce/langs/zh_CN.js',
+        content_css : "/stylesheets/tinymce_content.css",
+				menu : {
+						file   : {},
+						edit   : {title : 'Edit'  , items : 'undo redo | cut copy paste pastetext | selectall'},
+						insert : {title : 'Insert', items : 'link media | template hr'},
+						format : {title : 'Format', items : 'bold italic underline strikethrough superscript subscript | formats | removeformat'},
+						table  : {title : 'Table' , items : 'inserttable tableprops deletetable | cell row column'}
+				},
+				plugins: [
+						"advlist autolink lists link image charmap print preview anchor",
+						"searchreplace visualblocks code fullscreen",
+						"insertdatetime media table contextmenu paste"
+				],
+				toolbar: "undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+			});
+		});
+	</script>
+{% endblock %}

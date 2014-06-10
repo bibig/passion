@@ -1,0 +1,55 @@
+{% macro post_title (post) %}
+  <hr>
+  <center>
+  {% if post._cat %}
+  <h2>{{ post.title }}</h2>
+  {% else %}
+  <h2><a target="_blank" href="/post/{{post.id}}">{{ post.title }}</a></h2>
+  {% endif %}
+  <p><span class="dt">{{ post.created }}</span></p>
+  </center>
+{% endmacro%}
+
+{% macro post_image (post) %}
+  {% if post.image %}
+    <center><img src="/uploads/posts/{{post.image}}"></center>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_content (post) %}
+  <p>{{ post.content|safe }}</p>
+{% endmacro %}
+
+{% macro post_cat (post) %}
+  {% if post._cat %}
+    <center><a href="/">首页</a><small> / </small><strong><a href="/cat/{{post._cat.id}}">{{post._cat.name}}</a></strong></center>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_list (posts) %}
+  {%for post in posts %}
+    <div class="post">
+      {{ post_title(post) }}
+      {{ post_image(post) }}
+      {{ post_content(post) }}
+    </div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro post_block (post) %}
+  <div class="post">
+    {{ post_cat(post) }}
+    {{ post_title(post) }}
+    {{ post_image(post) }}
+    {{ post_content(post) }}
+  </div>
+{% endmacro %}
+
+{% macro post_page(newer, older) %}
+  {% if newer || older %}
+    <ul class="pager">
+      {% if newer %}<li class="previous"><a href="{{newer}}">&larr; 向前</a></li>{% endif %}
+      {% if older %}<li class="next"><a href="{{older}}">向后 &rarr;</a></li>{% endif %}
+    </ul>
+  {% endif %}
+{% endmacro %}
