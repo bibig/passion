@@ -1,21 +1,36 @@
 {
-  "name"        : "passion",
-  "author"      : "Bibig <bibig@me.com> (https://twitter.com/bibig)",
-  "version"     : "0.0.1",
-  "description" : "a personal or team blog system based on express and jsoncan",
-  "main"        : "index.js",
-  "scripts"     : {
-    "test": "mocha -w"
-  },
+  "name": "passion",
+  "version": "0.0.1",
+  "description": "a personal or team blog system based on express and jsoncan",
+  "main": "app.js",
   "dependencies": {
     "glory"             : "^0.1.1",
-    "yi"                : "^0.1.0",
-    "htmler"            : "^0.1.0",
-    "authLogic"         : "^0.2.1",
     "jsoncan"           : "^1.4.2",
-    "jsoncan-dashboard" : "^0.2.0",
+    "yi"                : "^0.1.0",
+    "authlogic"         : "^0.2.1",
+    "debug"             : "^0.7.4",
+    "jsoncan-dashboard" : "^0.2.3"
   },
   "devDependencies": {
-    "filler": "^0.1.0"
-  }
+    "mocha"  : "*",
+    "should" : "*",
+    "filler" : "^0.1.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type" : "git",
+    "url"  : "git://github.com/bibig/passion.git"
+  },
+  "keywords": [
+    "blog",
+    "jsoncan"
+  ],
+  "author": "Bibig <bibig@me.com> (https://twitter.com/bibig)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bibig/passion/issues"
+  },
+  "homepage": "https://github.com/bibig/passion"
 }
