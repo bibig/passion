@@ -26,9 +26,19 @@
   	<link rel="stylesheet" type="text/css" href="/stylesheets/ie6.css" />
 		<![endif]-->
     <style>{% block style %}{% endblock %}</style>
+    {% block jquery %}
+      {% if isProduction %}
+      <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+      {% else %}
+      <script src="/javascripts/jquery-1.11.0.min.js"></script>
+      {% endif %}
+    {% endblock %}
   </head>
   <body>
+    {% block background %}{% endblock %}
+
     <div class="container">
+      {{ flash|safe }}
 			{% include "./shared/header.html" %}
       {% block nav %}{% include "./shared/nav.html" %}{% endblock %}
 			{% block content %}{% endblock %}
@@ -39,14 +49,6 @@
         </div>
       {% endblock %}
 		</div>
-
-    {% block jquery %}
-      {% if isProduction %}
-      <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-      {% else %}
-      <script src="/javascripts/jquery-1.11.0.min.js"></script>
-      {% endif %}
-    {% endblock %}
 
     {% if isProduction %}
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>

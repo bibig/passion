@@ -23,7 +23,7 @@ function timeEnd (res) {
 
 function getSite (req, res, next) {
   timeStart(res);
-
+  res.locals.flash = req.shine();
   res.locals.timer = new Date();
   can.open('site').query().limit(1).exec(function (e, records) {
     if (e) { next(e); } else  {

@@ -2,8 +2,11 @@
 {% set pageTitle = post.title %}
 
 {% block style %}
-  {% include "./shared/main_style.html" %}
   {% include "./shared/cat_style.html" %}
+{% endblock %}
+
+{% block background %}
+  {% if currentCat.background %}<img id="bg" src="/uploads/cats/{{currentCat.background}}">{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -16,5 +19,4 @@
         </div>
       </div>
     </div>
-
 {% endblock %}

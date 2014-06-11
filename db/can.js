@@ -63,8 +63,8 @@ var tables = {
       inputType   : 'file',
       inputHelp   : '请上传小于4m的图片',
       isImage     : true,
-      path        : path.join(__dirname, '../public/uploads/site'), 
-      url         : '/uploads/site/',
+      path        : path.join(__dirname, '../public/uploads/logo'), 
+      url         : '/uploads/logo/',
       maxFileSize : 4* 1024 * 1024,
       exts        : ['jpg', 'jpeg', 'gif', 'png'],
       sizeField   : 'size',
@@ -124,7 +124,7 @@ var tables = {
       text     : '导航分类',
       required : true,
       isInput  : true,
-      max      : 6,
+      max      : 36,
       min      : 2
     },
     description: {
@@ -270,13 +270,14 @@ var tables = {
       text     : '名称',
       required : true,
       unique   : true,
-      size     : 100
+      max      : 100,
+      min      : 2
     },
     title: {
-      type: 'string',
-      max: 200,
-      required: true,
-      isInput: true
+      type     : 'string',
+      max      : 200,
+      required : true,
+      isInput  : true
     },
     meta_description : { 
       type    : 'string', 
@@ -294,7 +295,6 @@ var tables = {
       isInput: true,
       inputType: 'rich_textarea'
     },
-
     layout: {
       type: 'string',
       isInput: true,

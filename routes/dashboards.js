@@ -72,32 +72,6 @@ tables.posts = {
   }
 };
 
-/*tables.postImages = {
-  basic: {
-    title       : '文章图片',
-    description : '文章图片管理',
-    formLayout: [{ title : 5, seq: 2, _post: 5}, 'image', 'memo']
-  }, 
-  list: {
-    showFields: ['seq', 'title', 'image|thumb|link', '_post.title|link', 'created'],
-    dropdown: {
-      name  : 'posts.title',
-      title : '所属文章',
-      order : ['created', true],
-      filters: {
-        hasImages: true,
-        imagesCount: ['>', 0]
-      }
-    },
-    pageSize: 10
-  },
-  view: {
-    showFields : ['seq', 'title', 'image|image', 'memo', '_post.title|link', 'created', 'modified'],
-    isFormat   : true
-  }
-};
-*/
-
 tables.pages = {
   basic: {
     title: '页面',

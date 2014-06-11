@@ -5,6 +5,10 @@
   {% include "./shared/main_style.html" %}
 {% endblock %}
 
+{% block background %}
+  {% if site.background %}<img id="bg" src="/uploads/site/{{site.background}}">{% endif %}
+{% endblock %}
+
 {% block content %}
   {% include "./shared/macros.html" %}
   <div class="row">
