@@ -123,7 +123,6 @@ function getPost (req, res, next) {
     if (e) { next(e); } else if (! record ) { next(new Error('no post found')); } else {
       res.locals.post = record;
       res.locals.currentCat = record._cat;
-      // console.log(record);
       next();
     }
   });
@@ -141,7 +140,9 @@ function postsInCat (req, res, next) {
 
 function post (req, res, next) {
   timeEnd(res);
-  res.render('post');
+  res.render('post', {
+    lowkey: true
+  });
 }
 
 function getNeighbourPage (req, page, isOlder) {

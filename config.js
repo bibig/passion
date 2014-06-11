@@ -12,6 +12,7 @@ module.exports = {
 
   path: __dirname,
   stylus: true,
+  favicon: path.join(__dirname, './public/favicon.ico'),
 
   authlogic: {
     dbPath       : path.join(__dirname, './db/auths'),

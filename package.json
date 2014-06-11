@@ -1,6 +1,6 @@
 {
   "name": "passion",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a personal or team blog system based on express and jsoncan",
   "main": "app.js",
   "dependencies": {
