@@ -17,6 +17,7 @@ function clearImages (fn) {
 
 function rock () {
   var can = require('../db/can');
+  var names = ['创业', '产品', '应用软件', '科技', '网站', '人物', '品牌', '硬件', '资讯', '活动', '游戏', '移动', '社交', '投资', '企业'];
   var filler = new Filler(can, {
     reset    : true,
     images   : '/Users/bibig/Dropbox/images',
@@ -36,7 +37,11 @@ function rock () {
         logo       : '/Users/bibig/Dropbox/logo/bibig'
       },
       cats: {
-        name       : ['创业', '产品', '应用软件', '科技', '网站', '人物', '品牌', '硬件', '资讯', '活动', '游戏', '移动', '社交', '投资', '企业'],
+        name       : names,
+        background : '/Users/bibig/Dropbox/desktop'
+      },
+      pages: {
+        name       : names,
         background : '/Users/bibig/Dropbox/desktop'
       }
     }

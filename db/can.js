@@ -98,6 +98,99 @@ var tables = {
     meta_copyright   : { type: 'string', isInput: true }
   },
 
+  pages: {
+    id: {
+      type       : 'string',
+      text       : 'id',
+      required   : true,
+      unique     : true,
+      min        : 1,
+      max        : 20,
+      isInput    : true,
+      // only use for fake
+      lang       : 'en',
+      dictionary : '-0123456789_abcdefghijklmnopqrstuvwxyz'
+    },
+    seq: { 
+      type      : 'array', 
+      text      : '顺序',
+      required  : true,
+      values    : seqs(),
+      isInput   : true,
+      inputType : 'select'
+    },
+    name: {
+      type     : 'string',
+      text     : '名称',
+      required : true,
+      isInput  : true,
+      max      : 36,
+      min      : 2
+    },
+    description: {
+      type      : 'string',
+      text      : '描述',
+      required  : true,
+      isInput   : true,
+      inputType : 'textarea',
+      max       : 500
+    },
+    background: {
+      type        : 'string',
+      text        : '主背景',
+      isInput     : true,
+      inputType   : 'file',
+      inputHelp   : '请上传小于4m的图片',
+      isImage     : true,
+      path        : path.join(__dirname, '../public/uploads/pages'), 
+      url         : '/uploads/pages/',
+      maxFileSize : 4* 1024 * 1024,
+      exts        : ['jpg', 'jpeg', 'gif', 'png'],
+      sizeField   : 'size',
+      thumbs      : [200],
+      thumbPath   : false // use default
+    },
+    css: {
+      type      : 'string',
+      text      : 'css样式',
+      isInput   : true,
+      inputType : 'textarea',
+      rows      : 5
+    },
+    meta_description : { 
+      type    : 'string', 
+      text    : '搜索描述',
+      isInput : true 
+    },
+    meta_keywords : { 
+      type    : 'string',
+      text    : '搜索关键字',
+      isInput : true 
+    },
+    content: {
+      type: 'string',
+      required: true,
+      isInput: true,
+      inputType: 'rich_textarea'
+    },
+    status: {
+      type     : 'int',
+      text     : '状态',
+      default  : 1,
+      required : true
+    },
+    created :{
+      type   : 'created',
+      text   : '创建时间',
+      format : timestampFormat
+    },
+    modified: {
+      type   : 'modified',
+      text   : '更新时间',
+      format : timestampFormat
+    }
+  },
+
   cats: {
     id: {
       type       : 'string',
@@ -126,6 +219,16 @@ var tables = {
       isInput  : true,
       max      : 36,
       min      : 2
+    },
+    meta_description : { 
+      type    : 'string', 
+      text    : '搜索描述',
+      isInput : true 
+    },
+    meta_keywords : { 
+      type    : 'string',
+      text    : '搜索关键字',
+      isInput : true 
     },
     description: {
       type      : 'string',
@@ -256,83 +359,6 @@ var tables = {
       text    : '创建时间',
       isIndex : true,
       format  : timestampFormat
-    },
-    modified: {
-      type   : 'modified',
-      text   : '更新时间',
-      format : timestampFormat
-    }
-  },
-
-  pages: {
-    name: {
-      type     : 'string',
-      text     : '名称',
-      required : true,
-      unique   : true,
-      max      : 100,
-      min      : 2
-    },
-    title: {
-      type     : 'string',
-      max      : 200,
-      required : true,
-      isInput  : true
-    },
-    meta_description : { 
-      type    : 'string', 
-      text    : '搜索描述',
-      isInput : true 
-    },
-    meta_keywords : { 
-      type    : 'string',
-      text    : '搜索关键字',
-      isInput : true 
-    },
-    content: {
-      type: 'string',
-      required: true,
-      isInput: true,
-      inputType: 'rich_textarea'
-    },
-    layout: {
-      type: 'string',
-      isInput: true,
-      inputType: 'textarea',
-      rows: 5
-    },
-
-    stylsheet: {
-      type: 'string',
-      isInput: true,
-      inputType: 'textarea',
-      rows: 3
-    },
-
-    isIndependent: {
-      type: 'boolean',
-      text: '是否是独立页面',
-      required: true,
-      default: false,
-      isInput: true,
-      inputType: 'checkbox'
-    },
-
-    status: {
-      type: 'map',
-      required: true,
-      default: 1,
-      isInput: true,
-      inputType: 'radio',
-      values: {
-        0: '暂停',
-        1: '正常'
-      }
-    },
-    created :{
-      type   : 'created',
-      text   : '创建时间',
-      format : timestampFormat
     },
     modified: {
       type   : 'modified',

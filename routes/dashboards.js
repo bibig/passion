@@ -41,7 +41,7 @@ tables.cats =  {
     order      : ['seq']
   },
   view: {
-    showFields: ['name', 'seq', 'css', 'background|image|thumb_200', 'postsCount', 'posts'],
+    showFields: ['id', 'name', 'seq', 'css', 'background|image|thumb_200', 'meta_description', 'meta_keywords','description', 'postsCount', 'posts'],
     hasMany: {
       table         : 'posts',
       title         : '文章',
@@ -78,8 +78,11 @@ tables.pages = {
     description: '独立页面管理'
   },
   list: {
-    showFields: ['name', 'title', 'created', 'modified'],
+    showFields: ['name|link', 'created', 'modified'],
     order: ['created', true]
+  },
+  view: {
+    showFields: ['id', 'name', 'seq', 'css', 'background|image|thumb_200', 'meta_description', 'meta_keywords', 'content', 'status', 'created', 'modified']
   }
 };
 

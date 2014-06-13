@@ -1,0 +1,9 @@
+{% if pages %}
+<div id="pages-nav">
+  <div class="pages">
+  {% for page in pages %}
+    <a href="/pages/{{page.id}}" title="{{page.name}}">{{page.name}}</a>
+  {% endfor %}
+  </div>
+</div>
+{% endif %}

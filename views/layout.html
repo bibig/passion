@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{{ pageTitle }}{% endblock %}</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images//favicon.ico" type="image/x-icon">
     <!-- Bootstrap -->
     {% if isProduction %}
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -42,6 +40,7 @@
 			{% include "./shared/header.html" %}
       {% block nav %}{% include "./shared/nav.html" %}{% endblock %}
 			{% block content %}{% endblock %}
+      {% block pages %}{%if ! hidePages %}{% include "./shared/pages.html" %}{% endif %}{% endblock %}
       {% block footer %}{% include "./shared/footer.html" %}{% endblock %}
       {% block slideup %}
         <div id="show-background-trigger">

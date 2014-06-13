@@ -1,0 +1,22 @@
+{% extends "./layout.html" %}
+{% set pageTitle = page.title %}
+
+{% block style %}
+  {% include "./shared/page_style.html" %}
+{% endblock %}
+
+{% block background %}
+  {% if page.background %}<img id="bg" src="/uploads/pages/{{page.background}}">{% endif %}
+{% endblock %}
+
+{% block content %}
+  {% include "./shared/macros.html" %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page">
+        <h1>{{ page.name }}</h1>
+        <p>{{ page.content|safe }}</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

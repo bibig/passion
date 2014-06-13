@@ -5,8 +5,11 @@ exports.getPost    = getPost;
 exports.getPosts   = getPosts;
 exports.getCat     = getCat;
 exports.getCats    = getCats;
+exports.getPage    = getPage;
+exports.getPages   = getPages;
 exports.postsInCat = postsInCat;
 exports.post       = post;
+exports.page       = page;
 
 var path       = require('path');
 var can        = require('../db/can');
@@ -41,6 +44,40 @@ function getSeo (req, res, next) {
       next();
     }
   });
+}
+
+function getPages (req, res, next) {
+  var Page = can.open('pages');
+  var query = Page.query().select('id, name').order('seq');
+
+  query.exec(function (e, records) {
+    
+    if (e) { next(e); } else if (yi.isEmpty(records)) {
+      next( new Error('no data found!'));
+    } else {
+      res.locals.pages = records;
+      next();
+    }
+
+  });
+}
+
+function getPage (req, res, next) {
+  var Page = can.open('pages');
+  var id  = req.params.id;
+
+  if ( ! id) { return next(); }
+
+  Page.finder('id', id).format().exec(function (e, record) {
+    
+    if (e) { next(e); } else if ( ! record ) {
+      next(new Error('no page found!'));
+    } else {
+      res.locals.page = record;
+      next();
+    }
+
+  }); 
 }
 
 function getCats (req, res, next) {
@@ -144,6 +181,14 @@ function post (req, res, next) {
     lowkey: true
   });
 }
+
+function page (req, res, next) {
+  timeEnd(res);
+  res.render('page', {
+    lowkey: true
+  });
+}
+
 
 function getNeighbourPage (req, page, isOlder) {
   var p = req.path;
