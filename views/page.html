@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block background %}
-  {% if page.background %}<img id="bg" src="/uploads/pages/{{page.background}}">{% endif %}
+  {% include "./shared/main_bg.html" %}
 {% endblock %}
 
 {% block content %}

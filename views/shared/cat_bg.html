@@ -1,0 +1,5 @@
+{% if currentCat.background %}
+    <img id="bg" src="/uploads/cats/{{currentCat.background}}">
+  {% else %}
+    {% include "./main_bg.html" %}
+  {% endif %}

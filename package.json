@@ -1,20 +1,20 @@
 {
   "name": "passion",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a personal or team blog system based on express and jsoncan",
   "main": "app.js",
   "dependencies": {
     "glory"             : "^0.1.2",
     "jsoncan"           : "^1.4.2",
     "yi"                : "^0.1.0",
-    "authlogic"         : "^0.2.1",
+    "authlogic"         : "^0.2.2",
     "debug"             : "^0.7.4",
     "jsoncan-dashboard" : "^0.2.3"
   },
   "devDependencies": {
     "mocha"  : "*",
     "should" : "*",
-    "filler" : "^0.2.0"
+    "filler" : "^0.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

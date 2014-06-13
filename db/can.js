@@ -127,14 +127,6 @@ var tables = {
       max      : 36,
       min      : 2
     },
-    description: {
-      type      : 'string',
-      text      : '描述',
-      required  : true,
-      isInput   : true,
-      inputType : 'textarea',
-      max       : 500
-    },
     background: {
       type        : 'string',
       text        : '主背景',
@@ -337,7 +329,6 @@ var tables = {
       type           : 'string',
       text           : '图片', 
       max            : 100,
-      required       : true,
       isInput        : true,
       inputType      : 'file',
       inputHelp      : '请上传小于4m的图片',

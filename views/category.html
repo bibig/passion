@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block background %}
-  {% if currentCat.background %}<img id="bg" src="/uploads/cats/{{currentCat.background}}">{% endif %}
+  {% include "./shared/cat_bg.html" %}
 {% endblock %}
 
 {% block content %}

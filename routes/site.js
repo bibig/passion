@@ -52,9 +52,7 @@ function getPages (req, res, next) {
 
   query.exec(function (e, records) {
     
-    if (e) { next(e); } else if (yi.isEmpty(records)) {
-      next( new Error('no data found!'));
-    } else {
+    if (e) { next(e); } else {
       res.locals.pages = records;
       next();
     }
