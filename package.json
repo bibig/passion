@@ -4,7 +4,7 @@
   "description": "a personal or team blog system based on express and jsoncan",
   "main": "app.js",
   "dependencies": {
-    "glory"             : "^0.1.1",
+    "glory"             : "^0.1.2",
     "jsoncan"           : "^1.4.2",
     "yi"                : "^0.1.0",
     "authlogic"         : "^0.2.1",
