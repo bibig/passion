@@ -1,5 +1,7 @@
 {% extends "./layout.html" %}
 {% set pageTitle = post.title %}
+{% set pageKeywords = post.meta_keywords %}
+{% set pageDescription = post.meta_description %}
 
 {% block style %}
   {% include "./shared/cat_style.html" %}

@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ pageTitle }}{% endblock %}</title>
+    <meta name="keywords" content="{{ pageKeywords }} {{ seo.meta_keywords }}" />
+    <meta name="description" content="{{ pageDescription }} {{ seo.meta_description }}" />
+    <meta name="author" content="{{ seo.meta_author }}" />
+    <meta name="copyright" content="{{ seo.meta_copyright }}" />
+    <title>{{ seo.title_prefix }}{% block title %}{{ pageTitle }}{% endblock %}{{ seo.title_suffix }}</title>
     <!-- Bootstrap -->
     {% if isProduction %}
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
